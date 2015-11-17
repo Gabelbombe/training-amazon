@@ -1,0 +1,9 @@
+AWS Technical Essentials - Lab 2 - Amazon EC2
+
+Lab Description: Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. Amazon EC2 reduces the time required to obtain and boot new 
+server instances to minutes, allowing you to quickly scale capacity as your computing requirements change. In this lab you will launch an Amazon EC2 instance, connect to the instance, and create 
+Elastic Block Store (EBS) volumes.
+
+Lab Creator: Joe Sarabia
+Date Created: September 24, 2015 09:36 PM
+AWS Region: [us-east-1] US East (N. Virginia) 

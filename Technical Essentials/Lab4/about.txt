@@ -1,0 +1,8 @@
+AWS Technical Essentials - Lab 4 - Amazon RDS
+
+Lab Description: Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate and scale a relational database in the cloud. In this lab you will be using 
+Amazon RDS to launch a MediaWiki application. This is a free software open source wiki package written in PHP, originally for use on Wikipedia.
+
+Lab Creator: Joe Sarabia
+Date Created: September 24, 2015 09:39 PM
+AWS Region: [us-east-1] US East (N. Virginia) 

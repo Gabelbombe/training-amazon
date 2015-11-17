@@ -1,0 +1,8 @@
+AWS Technical Essentials - Lab 3 - Amazon ELB
+
+Lab Description: Elastic Load Balancing is used to distribute incoming application traffic across multiple Amazon EC2 instances. It enables you to achieve even greater fault tolerance in your 
+applications, seamlessly providing the amount of load balancing capacity needed in response to incoming application traffic. In this lab you will create an elastic load balancer for HTTP traffic.
+
+Lab Creator: Joe Sarabia
+Date Created: September 24, 2015 09:40 PM
+AWS Region: [us-east-1] US East (N. Virginia) 

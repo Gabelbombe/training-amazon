@@ -1,0 +1,9 @@
+AWS Technical Essentials - Lab 1 - Amazon S3
+
+Lab Description: Amazon Simple Storage Service (Amazon S3) is a scalable object storage service designed for the Internet. In this lab you will create an Amazon S3 bucket and configure access 
+logging. You will then upload an object and manage its permissions. When this is done, you can access the object via a web browser. You will have a chance to modify the object metadata, encrypt 
+objects with Server Side Encryption, create folders, apply bucket- wide security with a bucket policy, and enable lifecycle policies to archive and delete logs.
+
+Lab Creator: Joe Sarabia
+Date Created: September 24, 2015 09:44 PM
+AWS Region: [us-east-1] US East (N. Virginia) 

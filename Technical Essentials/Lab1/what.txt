@@ -1,0 +1,29 @@
+AWS Technical Essentials v3.7 - Lab 1
+
+============================================================================================================================================
+
+This file contains the UserData content that you need to complete the lab.
+
+To use this file:
+
+1. Locate the section you need. Each section in this file matches a section in the lab instructions.
+
+2. Replace items in brackets - <> - with appropriate values. For example, in this command you would replace the value - <JobFlowID> - (including the brackets) with the parameter indicated in the 
+lab instructions:
+
+   elastic-mapreduce --list <JobFlowID>
+
+3. Do NOT enable the Word Wrap feature in Windows Notepad or the text editor you use to view this file.
+
+============================================================================================================================================
+
+++++ Folders and Bucket Policies ++++
+
+============================================================================================================================================
+
+arn:aws:s3:::<your-S3-Bucket-Name>/images/*
+
+
+
+Copyright 2015 Amazon Web Services, Inc. or its affiliates. All rights reserved.
+
