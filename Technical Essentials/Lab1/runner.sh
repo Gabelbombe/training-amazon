@@ -49,12 +49,14 @@ done
 ## - storage: tag as reduced redundancy
 ## - exclude: do not upload text files
 ## - acl: allow public reading of file
+## - recursive: upload everything there
 ## - sse: (bool) implement encryption
 cd ${assets}
 aws s3 sync ${dir} s3://${bucket}             \
   --storage-class ${storage}                  \
   --exlude="*.txt"                            \
   --acl "private"                             \
+  --recursive                                 \
   --sse
 
 ## create an s3 policy for the bucket
