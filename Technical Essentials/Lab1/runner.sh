@@ -1,11 +1,15 @@
 #!/usr/local/bin/bash
+# AWS Tech Essentials Lab1 in code
 
-# 54.179.171.34
+# CPR : Jd Daniel :: Ehime-ken
+# MOD : 2015-11-17 @ 14:42:21
+# VER : 1.0.0
 
-[ -z "${1}" ] && { echo "AWS Profile must be specified" ; exit 1 ; }
-[ -z "${2}" ] && { echo "AWS Region must be specified"  ; exit 1 ; }
 
-aws="aws --profile ${1} --region ${2}"  ## prepackage the aws command
+## unused, might implement....
+#[ -z "${1}" ] && { echo "AWS Profile must be specified" ; exit 1 ; }
+#[ -z "${2}" ] && { echo "AWS Region must be specified"  ; exit 1 ; }
+#aws="aws --profile ${1} --region ${2}"  ## prepackage the aws command
 
 
 # # # # # # # # # # # # # # #
@@ -70,9 +74,49 @@ echo '{
 ## apply policy to the bucket
 aws s3api put-bucket-policy --bucket ${bucket} --policy file://policy.json
 
+## clean up the project
+## - force: we're serious
+aws s3 rm s3://${bucket} --force
 
-## extra cred stuff
-## ................
+
+############################
+##    extra cred stuff    ##
+##    ................    ##
+############################
+
+
+## redefine bucket-name
+bucket="serverlogs-$(cat /dev/urandom |tr -dc 'a-zA-Z0-9' |fold -w 32 |head -n 1)"
+
+## create bucket
+aws s3 mb s3://${bucket} --region ${region}
+
+## nor positive if expiry is correct?
+## also id might need to be:  archive-logs
+echo '{
+  "Rules": [
+    {
+      "ID": "Move to Glacier after thirty days (objects in logs/)",
+      "Prefix": "logs/",
+      "Status": "Enabled",
+      "Transition": {
+        "Days": 30,
+        "StorageClass": "GLACIER"
+      }
+    },
+    {
+      "ID": "Delete logs after ninety days",
+      "Prefix": "logs/",
+      "Status": "Enabled",
+      "Expiration": {
+        "Days": 90
+      },
+    }
+  ]
+}' > lifecycle.json
+
+## same as rule apply target etc..
+aws s3api put-bucket-lifecycle --bucket ${bucket} --lifecycle-configuration file://lifecycle.json
 
 ## clean up the project
 ## - force: we're serious
