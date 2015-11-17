@@ -1,0 +1,2 @@
+Effective DDoS mitigation? Just absorb? Does this include Layer 7 attacks?
+Can IAM/ACLs use something like CloudFronts OriginAccessIdentity in order to restrict access to region?
